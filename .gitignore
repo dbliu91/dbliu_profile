@@ -1,0 +1,7 @@
+# Local raw backup videos
+assets/videos_raw_backup/
+
+# Logs & temp files
+*.log
+.DS_Store
+Thumbs.db
