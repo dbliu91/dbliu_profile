@@ -86,15 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
       index: 4,
       period: "2021 年度总结",
       durationText: "时长：约 00:30",
-      techTag: "UE4 程序外包 / 端游实机 / 虚拟社交",
-      title: "2021 年度工作总结（UE4 程序外包与虚拟社交起点）",
+      techTag: "UE4 端游研发 / 远程技术支持 / 虚拟社交",
+      title: "2021 年度工作总结（UE4 端游研发与虚拟社交起点）",
       src: "assets/videos/annual-2021.mp4",
       poster: "assets/images/annual-2021.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2021）",
       sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "开始承接 UE4 程序外包，主要参与端游核心系统与战斗实机开发，并接触多个虚拟社交项目原型与调试。",
+      summary: "居家远程开展 UE4 端游核心系统与战斗实机研发，并提供远程技术支持，同时接触多个虚拟社交项目原型与调试。",
       chapters: [
-        { time: 0, timeStr: "00:00", name: "承接 UE4 程序外包起点", detail: "端游核心系统开发与实机画面联调" },
+        { time: 0, timeStr: "00:00", name: "UE4 端游研发起点", detail: "端游核心系统开发与实机画面联调" },
         { time: 10, timeStr: "00:10", name: "多项目战斗系统蒙太奇", detail: "技能动作、打击判定与底层逻辑" },
         { time: 20, timeStr: "00:20", name: "虚拟社交客户端与调试", detail: "虚拟场景、角色同步与交互系统原型" }
       ]
@@ -257,9 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 导航栏滚动高亮
   const navLinks = document.querySelectorAll('.nav-links .nav-item');
   const sections = [
-    document.getElementById('career'),
     document.getElementById('video-theater'),
-    document.getElementById('projects')
+    document.getElementById('projects'),
+    document.getElementById('career')
   ];
 
   window.addEventListener('scroll', () => {
