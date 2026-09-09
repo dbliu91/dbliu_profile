@@ -24,26 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
         { time: 177, timeStr: "02:57", name: "ROEDefense ｜ Quest 3 工业数字孪生与维修仿真", detail: "MR 现场扫描、3DGS/PLY 运行时加载、空间锚点与 BLE 遥测" },
         { time: 223, timeStr: "03:43", name: "AoK ｜ UE5 多人 ARPG & UnrealMCP 自动测修", detail: "GAS 技能体系、Behavior Tree Boss AI、AI 读日志看截图自动修 Bug" },
         { time: 270, timeStr: "04:30", name: "Karen ｜ UE5 商场破坏解压与性能优化", detail: "Chaos 几何破坏、连锁反应、Static Mesh 代理与 Tick 分档" },
-        { time: 315, timeStr: "05:15", name: "技术反思与总结 ｜ AI 时代工程师的真正价值", detail: "Agent 沉淀可复用技能、大模型辅助全栈研发、独立跑通整个项目" }
+        { time: 315, timeStr: "05:15", name: "技术反思与总结 ｜ AI 时代工程师的真正价值", detail: "把重复工作做成可复用的 Agent 技能、大模型辅助全栈研发、独立跑通整个项目" }
       ]
     },
     {
       index: 1,
       period: "2024 年度总结",
       durationText: "时长：约 01:30",
-      techTag: "AI NPC / Godot / Copilot / 3D MMORPG / Cursor",
+      techTag: "AI NPC / Godot / Copilot / 3D MMORPG",
       title: "2024 年度工作总结（AI 游戏、Discord 指令生成与 Godot/Copilot）",
       src: "assets/videos/annual-2024.mp4",
       poster: "assets/images/annual-2024.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2024）",
       sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
-      summary: "这一年我把 AI 当生产力用：用 Discord 指令生成游戏原型再用 Godot 接手开发；做一个 3D MMORPG 练手项目，跑通 AI 玩家、Node.js 服务端和寻路；日常开发则全面用 Cursor。",
+      summary: "这一年我把 AI 当生产力用：用 Discord 指令生成游戏原型再用 Godot 接手开发；做一个 3D MMORPG 练手项目，跑通 AI 玩家、Node.js 服务端和寻路。",
       chapters: [
         { time: 0, timeStr: "00:00", name: "AI NPC 与小镇系统", detail: "同项目不同主题外观、AI NPC 行为逻辑与交互测试" },
         { time: 18, timeStr: "00:18", name: "射击与飞行模式游戏原型", detail: "吃鸡与积分模式、平台化飞行玩法实机联调" },
         { time: 36, timeStr: "00:36", name: "Discord 指令生成游戏到 Godot", detail: "自然语言创建游戏工程，带 Copilot 的增量编辑与调试" },
         { time: 55, timeStr: "00:55", name: "3D MMORPG 练手项目", detail: "AI 玩家模拟、Node.js 高并发服务端与 Recast NavMesh 寻路" },
-        { time: 75, timeStr: "01:15", name: "Cursor 原生研发与工程反思", detail: "代码生成、日常重构与 AI 辅助开发的效能边界" }
+        { time: 75, timeStr: "01:15", name: "AI 辅助研发与工程反思", detail: "代码生成、日常重构与 AI 辅助开发的效能边界" }
       ]
     },
     {
