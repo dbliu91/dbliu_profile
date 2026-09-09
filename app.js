@@ -1,5 +1,5 @@
 /**
- * dbliu 个人工作经历与实机项目记录 (2021—2026)
+ * dbliu 个人工作经历与项目实录 (2021—2026)
  * 视频切换、章节跳转与页面交互控制
  */
 
@@ -11,20 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
       period: "2025.02 — 2026.08",
       durationText: "时长：约 06:15",
       techTag: "AI Agent / 3D Runtime / UE5 / Godot",
-      title: "2025.02 — 2026.08 工作记录（AI Agent、3D 生成与 UE5 运行时）",
+      title: "2025.02 — 2026.08 工作实录（AI Agent、3D 生成与 UE5 运行时）",
       src: "assets/videos/work-record-2025-2026.mp4",
       poster: "assets/images/work-record.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2025—2026）",
-      sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "重点在“把大模型接入真实工程”：让 Agent 理解并修改游戏工程状态，将教学意图变为结构化音视频流，将 3D 生成资产交付 UE5 运行时，并通过 UnrealMCP 驱动确定性感知与自动测修循环。",
+      sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
+      summary: "这一阶段我负责工程侧：让 Agent 修改后的代码仍可运行调试，让 AI 生成的 3D 资产直接进 UE5，让课程视频自动合成成片，并配合 UnrealMCP 搭建自动化测试场景。",
       chapters: [
         { time: 20, timeStr: "00:20", name: "Jabali ｜ AI-Native 游戏创建与编辑 Agent", detail: "Web / Discord / Studio 游戏创建，增量修改且保持工程可运行" },
         { time: 73, timeStr: "01:13", name: "Ivy ｜ 教师教学视频 Agent & HOFTC 流水线", detail: "三问需求澄清、镜头拆解、代码动画/Unreal/生成式视频路由与合成" },
-        { time: 128, timeStr: "02:08", name: "Prompt2Life ｜ AI 3D 角色与世界生成 (UE5)", detail: "自然语言/图片生成可探索 3D 角色、自动骨骼动画与场景编辑" },
+        { time: 128, timeStr: "02:08", name: "Prompt2Life ｜ AI 3D 角色与世界生成 (UE5)", detail: "自然语言/图片生成 3D 角色、自动绑定骨骼动画、场景编辑" },
         { time: 177, timeStr: "02:57", name: "ROEDefense ｜ Quest 3 工业数字孪生与维修仿真", detail: "MR 现场扫描、3DGS/PLY 运行时加载、空间锚点与 BLE 遥测" },
-        { time: 223, timeStr: "03:43", name: "AoK ｜ UE5 多人 ARPG & UnrealMCP 自动化闭环", detail: "GAS 技能体系、Behavior Tree Boss AI、AI 测修与感知闭环" },
+        { time: 223, timeStr: "03:43", name: "AoK ｜ UE5 多人 ARPG & UnrealMCP 自动测修", detail: "GAS 技能体系、Behavior Tree Boss AI、AI 读日志看截图自动修 Bug" },
         { time: 270, timeStr: "04:30", name: "Karen ｜ UE5 商场破坏解压与性能优化", detail: "Chaos 几何破坏、连锁反应、Static Mesh 代理与 Tick 分档" },
-        { time: 315, timeStr: "05:15", name: "技术反思与总结 ｜ AI 时代工程师的真正价值", detail: "Agent 固化 Skill 降本、大模型辅助全栈研发与独立闭环思考" }
+        { time: 315, timeStr: "05:15", name: "技术反思与总结 ｜ AI 时代工程师的真正价值", detail: "Agent 沉淀可复用技能、大模型辅助全栈研发、独立跑通整个项目" }
       ]
     },
     {
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       src: "assets/videos/annual-2024.mp4",
       poster: "assets/images/annual-2024.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2024）",
-      sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "记录从 Discord 指令与提示词生成游戏原型，结合 Godot 与 Copilot 进行后续工程编辑，以及内部 3D MMORPG 练手项目（AI 玩家、Node.js 服务端、NavMesh 寻路）与日常 Cursor 原生研发。",
+      sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
+      summary: "这一年我把 AI 当生产力用：用 Discord 指令生成游戏原型再用 Godot 接手开发；做一个 3D MMORPG 练手项目，跑通 AI 玩家、Node.js 服务端和寻路；日常开发则全面用 Cursor。",
       chapters: [
         { time: 0, timeStr: "00:00", name: "AI NPC 与小镇系统", detail: "同项目不同主题外观、AI NPC 行为逻辑与交互测试" },
         { time: 18, timeStr: "00:18", name: "射击与飞行模式游戏原型", detail: "吃鸡与积分模式、平台化飞行玩法实机联调" },
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
       src: "assets/videos/annual-2023.mp4",
       poster: "assets/images/annual-2023.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2023）",
-      sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "持续进行实时 3D 项目开发，覆盖 Unreal、Unity 与 Web 跨端方向；开始将 ChatGPT/AI 全面用于陌生技术查证、快速原型和边学边做，在编辑器、运行端和移动端持续验证。",
+      sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
+      summary: "这一年继续做实时 3D 项目，覆盖 Unreal、Unity 和 Web 三个端。同时我开始把 ChatGPT 当日常工具：查证陌生 API、快速做原型、边学边做，逐步验证 AI 能帮到哪一步。",
       chapters: [
         { time: 0, timeStr: "00:00", name: "实时 3D 场景与交互开发", detail: "角色控制、光影场景构建与运行时渲染优化" },
         { time: 20, timeStr: "00:20", name: "Unity / Web 跨端移植与测试", detail: "跨平台渲染适配、移动端预览与多端交互验证" },
-        { time: 40, timeStr: "00:40", name: "AI 辅助技术查证与学习闭环", detail: "利用 ChatGPT 查证冷门图形 API 与自动化调试" }
+        { time: 40, timeStr: "00:40", name: "AI 辅助技术查证与学习", detail: "用 ChatGPT 查证冷门图形 API，边查边学边做" }
       ]
     },
     {
@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
       src: "assets/videos/annual-2022.mp4",
       poster: "assets/images/annual-2022.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2022）",
-      sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "涵盖展馆与大型线上会议系统维护与优化、线上 Party 交互、服装模型展示、使用 GAS 重构核心战斗机制、Quest 2 VR 离线语音识别调试与自动化部署。",
+      sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
+      summary: "这一年维护展馆与大型线上会议系统，做线上 Party 和服装展示功能；用 GAS 重写了核心战斗系统；调试 Quest 2 VR 离线语音识别，并把构建部署做成自动化流水线。",
       chapters: [
         { time: 0, timeStr: "00:00", name: "展馆与线上会议系统", detail: "服务器逻辑、玩家交互业务、压力测试与性能优化" },
         { time: 25, timeStr: "00:25", name: "线上 Party 与服装模型展示", detail: "跨年度多人交互场景、服装材质与展示系统" },
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
       src: "assets/videos/annual-2021.mp4",
       poster: "assets/images/annual-2021.jpg",
       sidebarTitle: "本片包含的核心项目与章节（2021）",
-      sidebarDesc: "点击时间码即可跳转到对应项目实机演示画面：",
-      summary: "居家远程开展 UE4 端游核心系统与战斗实机研发，并提供远程技术支持，同时接触多个虚拟社交项目原型与调试。",
+      sidebarDesc: "点击时间码，可直接跳到对应片段的实机演示：",
+      summary: "这一年在家远程做 UE4 端游核心系统与战斗开发，同时负责客户的远程技术支持；业余接触了几个虚拟社交项目，做客户端原型和联调。",
       chapters: [
         { time: 0, timeStr: "00:00", name: "UE4 端游研发起点", detail: "端游核心系统开发与实机画面联调" },
         { time: 10, timeStr: "00:10", name: "多项目战斗系统蒙太奇", detail: "技能动作、打击判定与底层逻辑" },
