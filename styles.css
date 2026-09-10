@@ -70,7 +70,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* clip 不产生滚动容器，避免破坏移动端 sticky 顶栏 */
+  overflow-x: clip;
 }
 
 a {
@@ -386,6 +387,8 @@ img, video {
   padding: 76px 0;
   position: relative;
   border-top: 1px solid var(--border-subtle);
+  /* 锚点跳转时预留固定顶栏高度，避免标题被盖住 */
+  scroll-margin-top: calc(var(--header-height) + 12px);
 }
 
 .section-head {
@@ -1118,7 +1121,14 @@ img, video {
 }
 
 @media (max-width: 768px) {
+  /* 收紧区块间距 */
+  .section {
+    padding: 48px 0;
+  }
+
+  /* 移动端顶栏纵向堆叠，高度不定 → 改用 sticky 文档流占位，不再用 fixed + 固定预留值 */
   .site-header {
+    position: sticky;
     height: auto;
     padding: 12px 0;
   }
@@ -1140,16 +1150,122 @@ img, video {
     display: none;
   }
 
+  /* 顶栏回到文档流后，首屏只需自身节奏的留白 */
   .hero-section {
-    padding-top: calc(var(--header-height) + 60px);
+    padding-top: 42px;
   }
 
+  /* 移动端 sticky 顶栏约 150px 高，锚点跳转预留更多空间 */
+  .section {
+    scroll-margin-top: 158px;
+  }
+
+  /* ---- 视频区主次重排：视频为主，年份 Tab 与章节为辅 ---- */
+
+  /* 5 个年份 Tab 压成单行横滑选择条 */
   .video-tabs {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .video-tab {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .video-tab.active::before {
+    display: none;
+  }
+
+  .tab-title {
+    display: none;  /* 副标题太长，横滑条上只留时间段 */
+  }
+
+  .tab-badge {
+    margin-top: 0;
+  }
+
+  .video-tab:not(.active) .tab-badge {
+    display: none;  /* badge 仅激活项保留，减少噪音 */
   }
 
   .video-tab:last-child {
-    grid-column: span 1;
+    grid-column: auto;
+  }
+
+  /* 播放器为绝对主角 */
+  .theater-screen-wrapper {
+    padding: 12px;
+    gap: 14px;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* 章节列表重排为播放器正下方的横滑卡片条：
+     竖排布局（标题/详情/摘要由 DOM 顺序决定）改用 grid 重排 —— */
+  .theater-sidebar {
+    display: contents;  /* 让 sidebar 的三个子块直接参与外层 grid 布局 */
+  }
+
+  .sidebar-header {
+    display: none;  /* 「点击时间码可跳转」说明对触屏用户冗余，省高度 */
+  }
+
+  /* 用 order 重排 theater-main 内部：播放器 → 信息条 → 章节横滑条 → 摘要 */
+  .theater-main {
+    display: contents;
+  }
+
+  .chapter-list {
+    order: 3;
+    flex-direction: row;
+    gap: 8px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 2px 8px;
+    margin-bottom: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .chapter-item {
+    flex: 0 0 auto;
+    width: 200px;  /* 横滑卡片固定宽，露出下一张的边引导滑动 */
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .chapter-detail {
+    display: none;  /* 只留时间码 + 章节名，卡片更矮 */
+  }
+
+  .sidebar-summary {
+    order: 4;
+    margin-top: 0;
+  }
+
+  /* 播放器信息条在窄屏改为换行排列 */
+  .player-info-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .source-note {
+    display: none;
+  }
+
+  /* 移动端触屏无 hover，说明文字常显避免看不清 */
+  .project-overlay {
+    padding-top: 44px;
   }
 
   .footer-inner {
