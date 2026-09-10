@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function switchVideo(index) {
     if (index < 0 || index >= videoData.length) return;
     currentVideoIndex = index;
+    document.getElementById("video-panel").setAttribute("aria-labelledby", `video-tab-${index}`);
     const data = videoData[index];
 
     // 更新 Tab 样式
@@ -167,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     floatingTitle.textContent = data.title;
     videoPeriodPill.textContent = data.period;
-    videoDurationPill.textContent = data.durationText;
+    videoDurationPill.textContent = '正在读取时长';
     videoTechPill.textContent = data.techTag;
 
     sidebarVideoTitle.textContent = data.sidebarTitle;
@@ -181,6 +182,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  videoPlayer.addEventListener('loadedmetadata', () => {
+    const duration = videoPlayer.duration;
+    if (Number.isFinite(duration)) {
+      videoDurationPill.textContent = `时长 ${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, '0')}`;
+      chapterList.querySelectorAll('.chapter-item').forEach(button => {
+        button.disabled = Number(button.dataset.time) >= duration;
+        if (button.disabled) button.title = '该时间点超出当前视频长度';
+      });
+    }
+  });
+  videoPlayer.addEventListener('error', () => { videoDurationPill.textContent = '视频暂时无法加载，请刷新重试'; });
+  tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
+    let next;
+    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = tabs.length - 1;
+    if (next !== undefined) { event.preventDefault(); tabs[next].focus(); switchVideo(next); }
+  }));
+  switchVideo(0);
   // Tab 点击绑定
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
